@@ -1,4 +1,4 @@
-# truffle-hdwallet-provider
+# truffle-ledger-provider
 Ledger Wallet-enabled Web3 provider. Use it to sign transactions with Ledger Nano S or Ledger Blue.
 
 ## Install
