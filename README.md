@@ -54,7 +54,7 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     ropsten: {
-      provider: new HDWalletProvider(mnemonic, "https://ropsten.infura.io/" + infura_apikey),
+      provider: new LedgerWalletProvider(ledgerOptions, "https://ropsten.infura.io/" + infura_apikey),
       network_id: 3,
       gas: 4600000
     }
