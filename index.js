@@ -1,7 +1,7 @@
 const Web3 = require('web3')
 const TransportU2F = require('@ledgerhq/hw-transport-node-hid').default
 const ProviderEngine = require('web3-provider-engine')
-const Web3Subprovider = require('web3-provider-engine/subproviders/web3.js')
+const ProviderSubprovider = require('web3-provider-engine/subproviders/provider.js')
 const FiltersSubprovider = require('web3-provider-engine/subproviders/filters.js')
 const createLedgerSubprovider = require('@ledgerhq/web3-subprovider').default
 
@@ -14,7 +14,7 @@ class LedgerProvider {
     this.engine = new ProviderEngine()
     this.engine.addProvider(ledger)
     this.engine.addProvider(new FiltersSubprovider())
-    this.engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(url)))
+    this.engine.addProvider(new ProviderSubprovider(new Web3.providers.HttpProvider(url)))
     this.engine.start()
   }
 
