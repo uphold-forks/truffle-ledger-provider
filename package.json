@@ -11,7 +11,7 @@
     "url": "git+https://github.com/hussy-io/truffle-ledger-provider.git"
   },
   "keywords": [
-    "etheruem",
+    "ethereum",
     "ledger",
     "hardware",
     "wallet",
@@ -26,7 +26,7 @@
   "dependencies": {
     "ethereumjs-wallet": "^0.6.0",
     "web3": "^0.18.2",
-    "web3-provider-engine": "^8.4.0",
+    "web3-provider-engine": "^14.0.5",
     "@ledgerhq/hw-transport-node-hid": "^4.7.6",
     "@ledgerhq/web3-subprovider": "^4.7.3"
   },
