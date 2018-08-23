@@ -66,3 +66,6 @@ module.exports = {
   },
 };
 ```
+
+## Contributors
+- Peter ([HUSSY.io](https://hussy.io))
