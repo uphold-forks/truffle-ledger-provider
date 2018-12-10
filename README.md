@@ -25,7 +25,7 @@ const ledgerOptions = {
   path: "44'/60'/0'/0", // ledger default derivation path
   askConfirm: false,
   accountsLength: 1,
-  accountsOffset: 0,
+  accountsOffset: 0
 };
 
 const provider = new LedgerWalletProvider(ledgerOptions, 'http://localhost:8545');
@@ -33,7 +33,7 @@ const provider = new LedgerWalletProvider(ledgerOptions, 'http://localhost:8545'
 
 ### Parameters:
 
-- `network`: `number`. Ethereum network ID. 1-mainnet, 3-ropsten, etc.
+- `networkId`: `number`. Ethereum network ID. 1-mainnet, 3-ropsten, etc.
 - `path`: `string`. HD derivation path.
 - `askConfirm`: `boolean`. If true, deployment of each contract must be confirmed.
 - `accountsLength`: `number`. Number of accounts to derivate.
@@ -56,14 +56,32 @@ module.exports = {
     development: {
       host: 'localhost',
       port: 8545,
-      network_id: '*', // Match any network id
+      network_id: '*' // Match any network id
     },
     ropsten: {
       provider: new LedgerWalletProvider(ledgerOptions, `https://ropsten.infura.io/${INFURA_APIKEY}`),
       network_id: 3,
-      gas: 4600000,
-    },
-  },
+      gas: 4600000
+    }
+  }
+};
+```
+
+## Debug mode
+
+You can enable the debug mode by passing `true` on the constructor. For instance:
+
+truffle.js
+
+```js
+module.exports = {
+  networks: {
+    ropsten: {
+      provider: new LedgerWalletProvider(ledgerOptions, `https://ropsten.infura.io/${INFURA_APIKEY}`, true), // Enable debug.
+      network_id: 3,
+      gas: 4600000
+    }
+  }
 };
 ```
 
